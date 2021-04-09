@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product Landing Page</title>
+	<link rel = "icon" href = "https://icon-library.com/images/league-of-legends-icon-transparent/league-of-legends-icon-transparent-0.jpg" type = "image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<style>
+		body,html{
+      		height: 100%;
+      		margin: 0;
+    	}
+    	#navbar{
+	      position: fixed;
+	      top: 0px;
+	      width: 100%;
+	      background-color: black;
+	    }
+	    #navbar a{
+	      float: right;
+	      display: block;
+	      color: white;
+	      text-align: center;
+	      padding: 22px 85px;
+	      text-decoration: none;
+	    }
+	    #navbar a:hover {
+	      background-color: #ddd;
+	        color: black;
+	    }
+    	.sidebar {
+	      height: 100%;
+	      width: 0;
+	      position: fixed;
+	      z-index: 1;
+	      top: 0;
+	      left: 0;
+	      background-color: black;
+	      overflow-x: hidden;
+	      transition: 0.5s;
+	      padding-top: 60px;
+	    }
+	    .sidebar a {
+	        padding: 8px 8px 8px 32px;
+	        text-decoration: none;
+	        font-size: 25px;
+	        color: #818181; 
+	        display: block;
+	        transition: 0.3s;
+	    }
+	    .sidebar a:hover {
+	        color: red;
+	    }
+	    .sidebar .closebtn {
+	      position: absolute;
+	      top: 0;
+	      right: 25px;
+	      font-size: 36px;
+	      margin-left: 50px;
+	    }
+	    .openbtn {
+	      font-size: 20px;
+	      cursor: pointer;
+	      background-color:black;
+	      color: white;
+	      padding: 17px 15px;
+	      border: none;
+	    }
+	    .openbtn:hover {
+	      background-color: #444;
+	    }
+	    .footer {
+	      background-color: black;
+	      text-align: center;
+	      padding: 40px;
+	      color: white;
+	    }
+	    #video{
+		  margin-left: 550px;
+		  margin-top: 50px;
+		}
+	    #header {
+		    background-position: center;
+		    background-size: auto;
+		    background-image: url("https://www.riotgames.com/darkroom/1440/656220f9ab667529111a78aae0e6ab9f:10e46504aa7f70eb33ef43ee464cb2d4/01-logo.png");
+		    min-height: 75%;
+		}
+		#header-igm{
+
+		}
+		@media screen and (max-height: 450px) {
+		  .sidebar {padding-top: 20px;}
+		  .sidebar a {font-size: 18px;}
+		}
+	</style>
+</head>
+<body>
+
+	<nav id="navbar">
+	    <button class="openbtn" onclick="openNav()" style="float:left">☰ Menu</button>
+	    <a href="https://www.garena.ph/gpc" target="_blank">Download</a>		  
+		<a href="https://sso.garena.com/ui/register?redirect_uri=https%3A%2F%2Fsso.garena.com%2Fui%2Flogin%3Fapp_id%3D10100%26redirect_uri%3Dhttps%253A%252F%252Faccount.garena.com%252F%253Flocale_name%253DPH%26locale%3Den-PH&locale=en-PH" target="_blank">Sign Up</a>
+		<a href="https://sso.garena.com/ui/login?app_id=10100&redirect_uri=https%3A%2F%2Faccount.garena.com%2F%3Flocale_name%3DPH&locale=en-PH" target="_blank">Sign In</a>
+		<a href="#Products">Products</a>
+  	</nav>
+
+	<div id="mySidebar" class="sidebar">
+	    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+	    <a href="index.html">Home</a>
+	    <a href="tributepage.html">Tribute Page</a>
+	    <a href="surveyform.html">Survey Form</a>
+	    <a href="productlandingpage.html">Product Landing Page</a>
+	    <a href="technicaldocumentationpage.html">Technical Documentation Page</a>
+  	</div>
+
+  	<header id="header"></header> 
+
+  	<div id="video">
+		<video width="500" height="300" controls>
+		  	<source src="Trailer.mp4" type="video/mp4">
+		  	<source src="Trailer.ogg" type="video/ogg">
+		</video>
+	</div>
+
+  	<div id="Products" class="w3-container">
+  		<div class="w3-content" style="max-width:700px">
+    	<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Products</span></h5>
+    	<div class="w3-row w3-center w3-card w3-padding">
+      		<a href="javascript:void(0)" onclick="openMenu(event, 'offer');" id="myLink">
+        		<div class="w3-col s3 tablink">Pricing</div>
+      		</a>
+      		<a href="javascript:void(0)" onclick="openMenu(event, 'howtodl');">
+        		<div class="w3-col s6 tablink">How to download</div>
+      		</a>
+      		<a href="javascript:void(0)" onclick="openMenu(event, 'contact');">
+        		<div class="w3-col s3 tablink">Contact Me</div>
+      		</a>
+    </div>
+
+    <div id="offer" class="w3-container menu w3-padding-48 w3-card">
+    	<h1>Division Boosting</h1>
+    	<ul><li><h3>Iron to Bronze</h3></li></ul>
+    	<ul><p>30 PHP</p></ul>
+    	<ul><li><h3>Bronze to Silver</h3></li></ul>
+    	<ul><p>50 PHP</p></ul>
+    	<ul><li><h3>Silver to Gold</h3></li></ul>
+    	<ul><p>70 PHP</p></ul>
+    	<ul><li><h3>Gold to Platinum</h3></li></ul>
+    	<ul><p>200 PHP</p></ul>
+    	<ul><li><h3>Platinum to Diamond</h3></li></ul>
+    	<ul><p>250 PHP</p></ul>
+    	<ul><li><h3>Diamond to Master</h3></li></ul>
+    	<ul><p>400 PHP</p></ul>
+    	<ul><li><h3>Master to Grand Master</h3></li></ul>
+    	<ul><p>600 PHP</p></ul>
+    	<ul><li><h3>Grand Master to Challenger</h3></li></ul>
+    	<ul><p>800 PHP</p></ul>
+
+    	<h1>Garena Shells</h1>
+    	<ul><li><h3>20 Shells - 35 PHP</h3></li></ul>
+    	<ul><li><h3>50 Shells - 65 PHP</h3></li></ul>
+    	<ul><li><h3>100 Shells - 110 PHP</h3></li></ul>
+    	<ul><li><h3>200 Shells - 205 PHP</h3></li></ul>
+    	<ul><li><h3>300 Shells - 300 PHP</h3></li></ul>
+    	<ul><li><h3>500 Shells - 500 PHP</h3></li></ul>
+    	<ul><li><h3>1000 Shells - 1000PHP</h3></li></ul>
+
+    	<h1>Buy and Sell Accounts</h1>
+    	<h3><a href="https://www.facebook.com/groups/121943388213367" title="Buy and Sell Account" target="_blank">Visit our Facebook page</a></h3>
+
+    </div>
+
+    <div id="howtodl" class="w3-container menu w3-padding-48 w3-card">
+    	<h1>Steps to follow</h1>
+    	<ol>
+	    	<li><h3>Click the download button at the top</h3></li>
+	    	<li><h3>Click download now</h3></li>
+	    	<li><h3>Click download now</h3></li>
+	    	<li><h3>Install Garena</h3></li>
+	    	<li><h3>Login or Sign up</h3></li>
+	    	<li><h3>Click League of Legends</h3></li>
+	    	<li><h3>Install</h3></li></ul>
+	    	<li><h3>After installation you are free to play. Enjoy!</h3></li>
+    	</ol>
+
+    </div>
+
+    <div id="contact" class="w3-container menu w3-padding-48 w3-card">
+    	<p><a href="https://www.facebook.com/aykasjay909" target="_blank" title="Stalker">Visit My FaceBook Account</a></p>
+      	<p>Judah Padilan</p>
+      	<p>Phone Number: 0956 853 9904</p>
+      	<p>Email: <a href="mailto:padilanjudah909@gmail.com">padilanjudah909@gmail.com</a></p>
+
+      	<form action="https://www.freecodecamp.org/email-submit"
+			method="POST"
+			enctype="multipart/form-data"
+			name="EmailForm">
+		    Oder:<br>
+		    <input type="text" size="19" name="Contact-Order" required><br><br>
+		    Email:<br>
+		    <input type="email" name="Contact-Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required><br><br> 
+		    Address:<br> 
+		    <textarea name="Contact-Address" rows="6″ cols="20″>
+		    </textarea><br><br> 
+		    <button type="submit" value="Submit">Submit</button>
+		</form>
+
+    </div> 
+
+	</div></div>
+
+    <footer class="footer">
+	    <p>Created by: <a href="index.html">Judah Padilan</a></p>
+	    <p style="float: left;">@copyright 2021</p>
+  	</footer>
+
+
+	<script>
+	    function openNav() {
+	      document.getElementById("mySidebar").style.width = "250px";
+	      document.getElementById("main").style.marginLeft = "250px";
+	    }
+	    function closeNav() {
+	      document.getElementById("mySidebar").style.width = "0";
+	      document.getElementById("main").style.marginLeft= "0";
+	    }
+
+	    function openMenu(evt, menuName) {
+	        var i, x, tablinks;
+	        x = document.getElementsByClassName("menu");
+	        for (i = 0; i < x.length; i++) {
+	          x[i].style.display = "none";
+	        }
+	        tablinks = document.getElementsByClassName("tablink");
+	        for (i = 0; i < x.length; i++) {
+	          tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+	        }
+	        document.getElementById(menuName).style.display = "block";
+	        evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+	    }
+	    document.getElementById("myLink").click();
+	  </script>
+
+</body>
+</html>

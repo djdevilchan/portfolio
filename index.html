@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel = "icon" href = "https://scontent.fcrk1-1.fna.fbcdn.net/v/t1.0-9/107835005_1045707199178896_6794446713317170470_n.jpg?_nc_cat=104&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeGghdQYROm28wa_EcieXe5HhrIIjiqBsA2GsgiOKoGwDWzDa7r6XU-5ce861II06il4NtQgOcpeGsphgPzcQkl8&_nc_ohc=niIAjKpCauQAX_uFna5&_nc_ht=scontent.fcrk1-1.fna&oh=eb99d071c7a93f8f7045fde36d3b4f1b&oe=60815B50" type = "image/x-icon">
+  <style>
+    body,html{
+      height: 100%;
+      margin: 0;
+    }
+    #navbar{
+      position: fixed;
+      top: 0px;
+      width: 100%;
+      background-color: black;
+    }
+    #navbar a{
+      float: right;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 22px 85px;
+      text-decoration: none;
+    }
+    #navbar a:hover {
+      background-color: #ddd;
+        color: black;
+    }
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: black;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+    .sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181; 
+        display: block;
+        transition: 0.3s;
+    }
+    .sidebar a:hover {
+        color: red;
+    }
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+    .openbtn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color:black;
+      color: white;
+      padding: 17px 15px;
+      border: none;
+    }
+    .openbtn:hover {
+      background-color: #444;
+    }
+    #welcome-section {
+      text-align: center;
+      background-image: url(https://i.pinimg.com/originals/06/6b/e3/066be3bfa0e6ec54e20b95f43e6bbfa9.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 328px;
+    }
+    #projects {
+      text-align: center;
+      background: white;
+    }
+    .tiles {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      align-items: end;
+    }
+    .project-tile {
+      background: white;
+      padding: 2em;
+    }
+    .project-tile a {
+      text-decoration: none; 
+      color: grey;
+      font-weight: bold;
+      font-size: 1em;
+    }
+    .responsive {
+      max-width: 100%;
+      height: auto;
+    }
+    #profile {
+      text-align: center;
+      background-color: lightgrey;
+      padding: 328px;
+    }
+    .footer {
+      background-color: black;
+      text-align: center;
+      padding: 40px;
+      color: white;
+    }
+
+    @media all and (max-width: 800px) {
+      .tiles {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <button class="openbtn" onclick="openNav()" style="float:left">☰ Menu</button>
+    <a href="#profile">Contact</a>
+    <a href="#projects">Project</a>
+    <a href="#welcome-section">Home</a>
+  </nav>
+
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="index.html">Home</a>
+    <a href="tributepage.html">Tribute Page</a>
+    <a href="surveyform.html">Survey Form</a>
+    <a href="productlandingpage.html">Product Landing Page</a>
+    <a href="technicaldocumentationpage.html">Technical Documentation Page</a>
+  </div>
+
+  <section id="welcome-section">
+    <h1>Hi! I am Judah Nhel Padilan</h1>
+    <p>Currently studying at the University of the Cordilleras and I am taking BS in Network Security</p>
+  </section>
+
+  <section id="projects">
+    <h1>This are my Projects</h1>
+    <div class="tiles">
+      <div class="project-tile">
+        <a href="tributepage.html"><img src="https://i.ytimg.com/vi/Hv0CpjYOBxM/maxresdefault.jpg" alt="My Tribute Page" class="responsive">
+          <div style="color: red">My tribute Page</div>
+        </a>
+      </div>
+      <div class="project-tile">
+        <a href="surveyform.html"><img src="https://sharpencx.com/wp-content/uploads/2019/02/22_7-Ways-to-Encourage-Customers_0219-01-3.png" alt="survey" class="responsive">
+          <div style="color: red">My Survey Form Page</div>
+        </a>
+      </div>
+      <div class="project-tile">
+        <a href="productlandingpage.html"><img src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltcfa4652c8d383f56/5e21837f63d1b6503160d39b/Home-page.jpg" alt="LOL" class="responsive">
+          <div style="color: red">My Product Landing Page</div>
+        </a>
+      </div>
+      <div class="project-tile">
+        <a href="technicaldocumentationpage.html"><img src="https://www.jrebel.com/sites/rebel/files/image/2020-05/image-blog-revel-top-java-tools.jpg" alt="Java" class="responsive">
+          <div style="color: red">My Technical Documentation Page</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="profile">
+    <h1>Contact Me</h1>
+    <a style="color: red" href="https://www.facebook.com/aykasjay909/" target="_blank" title="My Facebook Page">Facebook</a><br>
+    <a style="color: red" href="https://github.com/djdevilchan" target="_blank" title="My GitHuB Page">GitHuB</a><br>  
+    <a style="color: red" href="mailto:padilanjudah909@gmail.com">Email</a><br>   
+  </section>
+
+  <footer class="footer">
+    <p>Created by: <a href="index.html">Judah Padilan</a></p>
+    <p style="float: left;">@copyright 2021</p>
+  </footer>
+
+
+  <script>
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+    }
+  </script>
+
+</body>
+</html>

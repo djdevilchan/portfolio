@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Technical Documentation Page</title>
+    <link rel = "icon" href = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Land_Transportation_Office.svg/1200px-Land_Transportation_Office.svg.png" type = "image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        html,body{
+            min-width:290px;
+            color: #4d4e53;
+            background-color: lightgrey;
+            line-height: 2;
+        }      
+        #navbar{
+          position:fixed;
+          min-width:290px;
+          top:0px;
+          left:0px;
+          width:300px;
+          height:100%;
+          border-right:solid;
+          border-color:rgba(0,22,22,0.4)
+        }
+        header{
+          text-align:center;
+          font-weight:thin;
+          font-size: 1.6em;
+          background-color: black;
+          color: white;
+          margin: 0.5em 0em;
+        }
+        a li:hover {
+            background-color: black!important;
+            color:white!important;
+        }
+        #main-doc header{
+          text-align:left;
+          margin:0px;
+        }
+        #navbar ul{
+          height:88%;
+          overflow-y:auto;
+          overflow-x:hidden;
+        }
+        #navbar li{
+          color: #4d4e53;
+          padding:8px;
+          list-style: none;
+          position:relative;
+          width:100%; 
+        }
+        #main-doc{
+          position: absolute;
+          margin-left:150px;
+          padding:20px;
+          margin-bottom:110px;
+        }
+        section article{
+          color: #4d4e53;
+          margin:15px;
+          font-size:1em;
+        }
+        section li {
+          margin:15px 0px 0px 20px;
+        }
+        @media only screen and (max-width: 815px) {
+          #navbar ul{
+          border:1px solid;
+            height:207px;
+          }
+            #navbar{
+              background-color:white;
+              position:absolute;
+              top:0;
+              padding:0;
+              margin: 0;
+              width:100%;
+              max-height:275px;
+              border:none;
+              z-index:1;
+              border-bottom:2px solid;
+            }
+          #main-doc{
+            position: relative;
+            margin-left:0px;
+            margin-top:270px;
+          }
+          #main-doc section {
+            padding-top: 240px;
+          }
+        }
+        @media only screen and (max-width: 400px) {
+          #main-doc{
+            margin-left:-10px;
+          }
+        }
+        .sidebar {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: black;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+        }
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181; 
+            display: block;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            color: red;
+        }
+        .sidebar .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        .openbtn {
+          font-size: 20px;
+          cursor: pointer;
+          background-color:black;
+          color: white;
+          padding: 17px 15px;
+          border: none;
+        }
+        .openbtn:hover {
+          background-color: #444;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 col-sm-12 col-xs-12">
+                <nav id="navbar">
+                    <header><button class="openbtn" onclick="openNav()" style="float:center">☰ Menu</button></header>
+                    <ul class="nav nav-pills nav-stacked">
+                        <a class="nav-link" href="#STP" rel="internal">
+                            <li>Student Permit</li>
+                        </a>
+                        <a class="nav-link" href="#NEWDL" rel="internal">
+                            <li>New Driver's License</li>
+                        </a>
+                        <a class="nav-link" href="#CDL" rel="internal">
+                            <li>Conductor's License</li>
+                        </a>
+                        <a class="nav-link" href="#CNP" rel="internal">
+                            <li>Change Classification from Non-Professional to Professional with Same Restriction Code</li>
+                        </a>
+                        <a class="nav-link" href="#CPN" rel="internal">
+                            <li>Change Classification from Non-Professional to Professional with Additional Restriction Code</li>
+                        </a>
+                        <a class="nav-link" href="#ARC" rel="internal">
+                            <li>Additional Restriction Codes</li>
+                        </a>
+                        <a class="nav-link" href="#CFDNP" rel="internal">
+                            <li>Conversion of Expired Foreign Driver's License to Non-Professional Driver's License</li>
+                        </a>
+                        <a class="nav-link" href="#CFDPN" rel="internal">
+                            <li>Conversion of Foreign Driver's License to Professional Driver's License</li>
+                        </a>
+                        <a class="nav-link" href="#RDL" rel="internal">
+                            <li>Renewal of Delinquent Driver's License [Expired for more than two (2) years] and Downgrading of Delinquent Professional DL to Non-Professional DL</li>
+                        </a>
+                        <a class="nav-link" href="#CCPN" rel="internal">
+                            <li>Change Classification from Professional to Non-Professional Driver's License</li>
+                        </a>
+                        <a class="nav-link" href="#RCODE" rel="internal">
+                            <li>RESTRICTION CODE</li>
+                        </a>
+                        <a class="nav-link" href="#LSFC" rel="internal">
+                            <li>LICENSE SCHEDULE OF FEES AND CHARGES</li>
+                        </a>
+                        <a class="nav-link" href="#Reference" rel="internal">
+                            <li>Reference</li>
+                        </a>
+                    </ul>
+
+                </nav>
+            </div>
+
+            <div class="col-md-10 col-sm-12 col-xs-12">
+                <main id="main-doc">
+                  <section class="main-section" id="STP">
+                    <header>Student Permit</header>
+                    <article>
+                      <h3>Qualifications:</h3>
+                        <ul>
+                          <li>Filipino citizens [sixteen (16) years of age and above]</li>
+                          <li>Foreign citizens at least eighteen (18) years old and must have been in the Philippines for at least one (1) month and proof of stay for at least six (6) months</li>
+                          <li>Must be physically and mentally fit</li>
+                          <li>Must be able to read and write in Filipino or English</li>
+                          <li>Must not have unsettled traffic violation</li>
+                        </ul>
+                        <h3>CHECKLIST OF REQUIREMENTS:</h3>
+                          <ol>
+                            <li>Duly accomplished Application for Driver's License (ADL).</li>
+                            <li>Presentation of original and submission of one (1) photocopy of birth certificate and marriage contract (for married women) duly authenticated by the Philippine Statistics Authority (PSA) or valid passport</li>
+                            <li>For applicants below 18 years of age, one (1) parent's consent or a person having custody/care or supervision over the minor applicant authorizing the applicant to secure a student permit with presentation of one (1) original and submission of one (1) photocopy of any valid government issued ID of the parent/affiant with photo and signature</li>
+                            <li>Presentation of original and submission of one (1) photocopy of any issued ID with photo and signature of the applicant</li>
+                            <li>Presentation of copy of the medical certificate. (Electronically transmitted to LTO by the accredited medical clinic)</li>
+                            <li>For foreigners, presentation of the original and submission of one (1) photocopy of passport with entry date of at least one (1) month and visa duration of six (6) months from date of application, or if born in the Philippines, presentation of the original and submission of one (1) photocopy of birth certificate duly authenticated by Philippine Statistics Authority (PSA).</li>
+                            <li>Taxpayer’s Identification Number (TIN), if employed</li>
+                        </ol>
+                      </artice>
+                    </section>
+
+                    <section class="main-section" id="NEWDL">
+                      <header>New Driver's License</header>
+                      <article>
+                        <h3>Qualifications:</h3>
+                        <ul>
+                          <li>Must be physically and mentally fit to operate a motor vehicle</li>
+                          <li>Must be able to read and write in Filipino and/or English</li>
+                          <li>Must have passed the written and practical examination</li>
+                          <li>Must be at least seventeen (17) years old</li>
+                          <li>Must be a holder of Student-Driver’s Permit valid for at least thirty one (31) days from issuance / expired foreign driver's license / expired non-professional driver's license for more than two (2) years</li>
+                          </ul>
+                        <h3>CHECKLIST OF REQUIREMENTS:</h3>
+                          <ol>
+                            <li>Duly accomplished Application for Driver's License (ADL).</li>
+                            <li>Presentation of copy of the medical certificate. (Electronically transmitted to LTO by the accredited medical clinic)</li>
+                            <li>Original copy of valid Student-Driver's Permit</li>
+                            <li>For applicants aged 17 years old, one (1) original copy of parent's consent or affidavit of a person having custody/care or supervision over the minor applicant authorizing the applicant to secure a student permit with presentation of original and submission of one (1) photocopy of any valid government issued ID of the parent/affiant with photo and signature</li>
+                          </ol>
+                      </artice>
+                    </section>
+
+                    <section class="main-section" id="CDL">
+                        <header>Conductor's License</header>
+                        <article>
+                          <h3>QUALIFICATIONS:</h3>
+                          <ul>
+                            <li>Must be physically and mentally fit to work as conductor</li>
+                            <li>Must be able to read and write in Filipino and/or English</li>
+                            <li>Must have passed the written examination</li>
+                            <li>Must be at least eighteen (18) years old</li>
+                          </ul>
+                          <h3>CHECKLIST OF REQUIREMENTS:</h3>
+                          <ol>
+                            <li>Duly accomplished Application Form for Driver’s License (ADL)</li>
+                            <li>Presentation of copy of the medical certificate. (Electronically transmitted to LTO by the accredited medical clinic)</li>
+                            <li>Presentation of original and submission of one (1) photocopy of birth certificate and marriage contract (for married women) duly authenticated by Philippine Statistics Authority (PSA). In areas where there is no PSA branch, presentation of original and submission of one (1) photocopy of birth certificate validated by the Office of the Local Civil Registry with attached Official Receipt.</li>
+                            <li>Taxpayer's Identification Number (TIN)</li>
+                          </ol>
+                        </article>
+                    </section>
+
+                    <section class="main-section" id="CNP">
+                        <header>Change Classification from Non-Professional to Professional with Same Restriction Code</header>
+                        <article>
+                          <p><b>QUALIFICATIONS:</b></p>
+                          <ol>
+                            <li>Must be physically and mentally fit to operate a motor vehicle</li>
+                            <li>Must be able to read and write in Filipino and/or English</li>
+                            <li>Must have passed the written and practical examination</li>
+                            <li>Must be a holder of a valid NPDL issued at least six (6) months from issuance</li>
+                          </ol>
+                          <p><strong>CHECKLIST OF REQUIREMENTS:</strong></p>
+                          <ol>
+                            <li>Duly accomplished Application Form for Driver’s License (ADL)</li>
+                            <li>Presentation of copy of the medical certificate. (Electronically transmitted to LTO by the accredited medical clinic)</li>
+                            <li>Presentation of original valid / expired NPDL</li>
+                            <li>Taxpayer's Identification Number (TIN)</li>
+                          </ol>
+                        </article>
+                    </section>
+
+                    <section class="main-section" id="CPN">
+                        <header>Change Classification from Non-Professional to Professional with Additional Restriction Code</header>
+                        <article>
+                          <p><b>QUALIFICATIONS:</b></p>
+                          <ol>
+                            <li>Must be physically and mentally fit to operate a motor vehicle</li>
+                            <li>Must be able to read and write in Filipino and/or English</li>
+                            <li>Must have passed the written and practical examination</li>
+                            <li>Must be a holder of a valid Non-Professional Driver's License with any Restriction code 1, 2, 4, 6 and/or 7 issued at least one (1) year prior to application</li>
+                            <li>Must <strong>NOT</strong> have been cited for two (2) or more counts of reckless driving during the period of validity of his/her existing license</li>
+                          </ol>
+                          <p><strong>CHECKLIST OF REQUIREMENTS:</strong></p>
+                          <ol>
+                            <li>Duly accomplished Application Form for Driver’s License (ADL)</li>
+                            <li>Presentation of copy of the medical certificate. (Electronically transmitted to LTO by the accredited medical clinic)</li>
+                            <li>Presentation of original valid / expired NPDL</li>
+                            <li>Taxpayer's Identification Number (TIN)</li>
+                          </ol>
+                      </article>
+                    </section>
+
+                    <section class="main-section" id="ARC">
+                        <header>Additional Restriction Codes</header>
+                        <article>
+                            <p><b>QUALIFICATIONS:</b></p>
+                            <ol>
+                              <li>Must be physically and mentally fit to operate a motor vehicle</li>
+                              <li>Must have passed the written and/or practical examination<br />-&nbsp;<strong>For additional restriction code 1 (RC1) or its equivalent DL codes :</strong> must have passed the practical examination.</li>
+                            </ol>
+                            <p><strong>Additional Qualifications:</strong></p>
+                            <ol>
+                              <li>For any of RC 1, 2, 4, 6 and/or 7 or its equivalent DL codes, applicant must be a holder of valid NPDL / PDL for at least one (1) year prior to the application</li>
+                              <li>For RC 3 or 5, applicant must be a PDL holder with RC 2 or 4, or its equivalent DL codes for a period of at least one (1) year prior to the application</li>
+                              <li>For additional RC 8 or its equivalent DL codes, must be a holder of a valid PDL with RC 3 issued at least two (2) years</li>
+                            </ol>
+                            <p><strong>CHECKLIST OF REQUIREMENTS:</strong></p>
+                            <ol>
+                              <li>Duly accomplished Application Form for Driver’s License (ADL)</li>
+                              <li>Presentation of copy of the medical certificate. (Electronically transmitted to LTO by the accredited medical clinic)</li>
+                              <li>Presentation of original NPDL/PDL</li>
+                              <li>In addition for RC 8, presentation of original and submission of one (1) photocopy of TESDA Certification (NC III) or Certification from any accredited TESDA training centers that applicant have undergone trade test with passing rate</li>
+                            </ol>
+                        </article>
+                    </section>
+
+                    <section class="main-section" id="CFDNP">
+                        <header>Conversion of Expired Foreign Driver's License to Non-Professional Driver's License</header>
+                        <article>
+                          <p><b>QUALIFICATIONS:</b></p>
+                          <ol>
+                            <li>Must be physically and mentally fit to operate a motor vehicle</li>
+                            <li>Must be able to read and write in Filipino and/or English</li>
+                            <li>Holder of a valid foreign driver's license whose visa is valid for 120 days upon arrival</li>
+                            <li>Must have passed the written and practical examination</li>
+                          </ol>
+                          <p><strong>CHECKLIST OF REQUIREMENTS:</strong></p>
+                          <ol>
+                            <li>Duly accomplished Application Form for Driver’s License (ADL)</li>
+                            <li>Presentation of copy of the medical certificate. (Electronically transmitted to LTO by the accredited medical clinic</li>
+                            <li>Presentation of original and submission of one (1) photocopy of expired foreign Driver's License. If the foreign Driver’s License is not in English language, original and one photocopy of official English translation.</li>
+                            <li>Presentation of original and submission of one (1) photocopy of valid passport showing the first page, visa page and latest date of entry in the Philippines or if born in the Philippines, presentation of the original and submission of one (1) photocopy of birth certificate duly authenticated by Philippine Statistics Authority (PSA). In areas where there is no PSA branch, presentation of the original and submission of one (1) photocopy of birth certificate validated by the Office of the Local Civil Registry with attached Official Receipt.</li>
+                          </ol>
+                        </article>
+                    </section>
+
+                    <section class="main-section" id="CFDPN">
+                        <header>Conversion of Foreign Driver's License to Professional Driver's License</header>
+                        <article>
+                          <p><b>QUALIFICATIONS:</b></p>
+                          <ol>
+                            <li>Must be physically and mentally fit to operate a motor vehicle</li>
+                            <li>Must be able to read and write in Filipino and/or English</li>
+                            <li>Must have passed the written and practical examinatio</li>
+                            <li>Must be a holder of a foreign driver's license</li>
+                            <li>Must NOT have been cited for two (2) or more counts of reckless driving during the period of validity of his/her foreign license</li>
+                          </ol>
+                          <p><strong>CHECKLIST OF REQUIREMENTS:</strong></p>
+                          <ol>
+                            <li>Duly accomplished Application Form for Driver’s License (ADL)</li>
+                            <li>Presentation of copy of the medical certificate. (Electronically transmitted to LTO by the accredited medical clinic)</li>
+                            <li>Presentation of original and submission of one (1) photocopy of foreign Driver's License. If the foreign Driver’s License is not in English language, original and one photocopy of official English translation.</li>
+                            <li>Presentation of original and submission of one (1) photocopy of valid passport showing the first page, visa page and latest date of entry in the Philippines or if born in the Philippines, presentation of the original and submission of one (1) photocopy of birth certificate duly authenticated by Philippine Statistics Authority (PSA). In areas where there is no PSA branch, presentation of the original and submission of one (1) photocopy of birth certificate validated by the Office of the Local Civil Registry with attached Official Receipt</li>
+                          </ol>
+                        </article>
+                    </section>
+
+                    <section class="main-section" id="RDL">
+                        <header>Renewal of Delinquent Driver's License [Expired for more than two (2) years] and Downgrading of Delinquent Professional DL to Non-Professional DL</header>
+                        <article>
+                          <p><b>QUALIFICATIONS:</b></p>
+                          <ol>
+                            <li>Must be physically and mentally fit to operate a motor vehicle</li>
+                            <li>Must have passed the written and practical examination</li>
+                          </ol>
+                          <p><strong>CHECKLIST OF REQUIREMENTS:</strong></p>
+                          <ol>
+                            <li>Duly accomplished Application Form for Driver’s License (ADL)</li>
+                            <li>Presentation of copy of the medical certificate. (Electronically transmitted to LTO by the accredited medical clinic)</li>
+                            <li>Presentation of original expired Driver's/Conductor's License</li>
+                          </ol>
+                        </article>
+                    </section>
+                    <section class="main-section" id="CCPN">
+                        <header>Change Classification from Professional to Non-Professional Driver's License</header>
+                        <article>
+                          <p><strong>QUALIFICATION:</strong></p>
+                          <ul>
+                            <li>Must be a holder of Professional Driver's License</li>
+                          </ul>
+                          <p><strong>CHECKLIST OF REQUIREMENTS:</strong></p>
+                          <ol>
+                            <li>Duly accomplished Application Form for Driver’s License (ADL)</li>
+                            <li>Presentation of copy of the medical certificate. (Electronically transmitted to LTO by the accredited medical clinic)</li>
+                            <li>Presentation of original PDL</li>
+                          </ol>
+                        </article>
+                    </section>
+
+                    <section class="main-section" id="RCODE">
+                        <header>RESTRICTION CODE</header>
+                        <article>
+                          <p>&nbsp;</p>
+                          <table style="width: 1058px; height: 576px;">
+                          <tbody>
+                          <tr>
+                          <td style="border: 1px solid #000000; text-align: center;"><strong>Type of Transaction</strong></td>
+                          <td style="border: 1px solid #000000; text-align: center;"><strong>Qualification</strong></td>
+                          <td style="border: 1px solid #000000; text-align: center;"><strong>Existing RC</strong></td>
+                          <td style="border: 1px solid #000000; text-align: center;"><strong>Applicable Additional</strong><br /><strong>Restriction Code</strong></td>
+                          <td style="border: 1px solid #000000; text-align: center;"><strong>Allowed Restriction Code/s</strong><br /><strong>with Maximum of 3 RC</strong></td>
+                          <td style="border: 1px solid #000000; text-align: center;"><strong>Remarks</strong></td>
+                          <td colspan="2" style="border: 1px solid #000000; text-align: center;"><br /><strong>Allowed Restriction Code/s with Maximum</strong><br /><strong>of 3 RC (initial issuance of DL)</strong></td>
+                          </tr>
+                          <tr>
+                          <td rowspan="2" style="border: 1px solid #000000;"><strong>New Non-Professional</strong><br /><strong>DL (SP-NPDL)&nbsp;</strong></td>
+                          <td rowspan="2" style="border: 1px solid #000000;">Valid SP issued <strong>31</strong><br /><strong>days</strong> prior to application&nbsp;</td>
+                          <td rowspan="2" style="border: 1px solid #000000; text-align: center;">None&nbsp;</td>
+                          <td style="border: 1px solid #000000; text-align: center;">&nbsp;</td>
+                          <td style="border: 1px solid #000000; text-align: center;">1, 2, 6</td>
+                          <td style="border: 1px solid #000000;">&nbsp;</td>
+                          <td style="border: 1px solid #000000; text-align: center;">1</td>
+                          <td style="border: 1px solid #000000;">&nbsp;Motorcycles/Motorized Tricycle</td>
+                          </tr>
+                          <tr>
+                          <td style="border: 1px solid #000000; text-align: center;">&nbsp;</td>
+                          <td style="border: 1px solid #000000; text-align: center;">1, 4, 6</td>
+                          <td style="border: 1px solid #000000;">&nbsp;</td>
+                          <td style="border: 1px solid #000000; text-align: center;">2</td>
+                          <td style="border: 1px solid #000000;">Motor vehicle with conventional and/or<br />automatic clutch up to 4,500 kilograms<br />gross vehicle weight.</td>
+                          </tr>
+                          <tr>
+                          <td rowspan="2" style="border: 1px solid #000000;"><strong>New Professional DL</strong><br /><strong>(SP - PDL)</strong></td>
+                          <td rowspan="2" style="border: 1px solid #000000;">Valid SP issued <strong>at least</strong><br /><strong>6</strong> months prior to application</td>
+                          <td rowspan="2" style="border: 1px solid #000000; text-align: center;">None</td>
+                          <td style="border: 1px solid #000000; text-align: center;">&nbsp;</td>
+                          <td style="border: 1px solid #000000; text-align: center;">&nbsp;1, 2, 6</td>
+                          <td style="border: 1px solid #000000;">&nbsp;</td>
+                          <td style="border: 1px solid #000000; text-align: center;">3</td>
+                          <td style="border: 1px solid #000000;">Motor vehicle with conventional and/or<br />automatic clutch above 4,500 kilograms<br />gross vehicle weight.</td>
+                          </tr>
+                          <tr>
+                          <td style="border: 1px solid #000000; text-align: center;">&nbsp;</td>
+                          <td style="border: 1px solid #000000; text-align: center;">&nbsp;1, 4, 6</td>
+                          <td style="border: 1px solid #000000;">&nbsp;</td>
+                          <td style="border: 1px solid #000000; text-align: center;">4</td>
+                          <td style="border: 1px solid #000000;">Motor vehicle with automatic clutch only<br />up to 4,500 kilograms gross vehicle weight.</td>
+                          </tr>
+                          <tr>
+                          <td rowspan="2" style="border: 1px solid #000000;"><strong>PDL with ARC</strong></td>
+                          <td rowspan="2" style="border: 1px solid #000000;">Valid PDL issued <strong>at least&nbsp;</strong><br /><strong>6</strong> months prior to application</td>
+                          <td style="border: 1px solid #000000; text-align: center;">1, 2, 6</td>
+                          <td style="border: 1px solid #000000; text-align: center;">3, 7, 8</td>
+                          <td style="border: 1px solid #000000; text-align: center;">1, 2, 3, 6, 7, 8</td>
+                          <td style="border: 1px solid #000000;">&nbsp;</td>
+                          <td style="border: 1px solid #000000; text-align: center;">7</td>
+                          <td style="border: 1px solid #000000;">Articulated motor vehicle 1,601 up to 4,500<br />kilograms gross vehicle weight and below</td>
+                          </tr>
+                          <tr>
+                          <td style="border: 1px solid #000000; text-align: center;">1, 4, 6</td>
+                          <td style="border: 1px solid #000000; text-align: center;">5, 7, 8</td>
+                          <td style="border: 1px solid #000000; text-align: center;">1, 4, 5, 6, 7, 8</td>
+                          <td style="border: 1px solid #000000;">&nbsp;</td>
+                          <td style="border: 1px solid #000000; text-align: center;">8</td>
+                          <td style="border: 1px solid #000000;">Articulated motor vehicle 4,501 kilograms<br />and above gross vehicle weight.</td>
+                          </tr>
+                          <tr>
+                          <td rowspan="2" style="border: 1px solid #000000; text-align: left;">Change Classification<br />without ARC (NPDL - PDL)</td>
+                          <td rowspan="2" style="border: 1px solid #000000; text-align: left;">Valid NPDL issued at least<br />5 months prior to&nbsp;<br />application</td>
+                          <td style="border: 1px solid #000000; text-align: center;">1, 2, 6</td>
+                          <td style="border: 1px solid #000000; text-align: center;">&nbsp;</td>
+                          <td style="border: 1px solid #000000; text-align: center;">1, 2, 6</td>
+                          <td style="border: 1px solid #000000;">&nbsp;</td>
+                          <td style="border: 1px solid #000000; text-align: center;">5</td>
+                          <td style="border: 1px solid #000000;">Motor vehicle with automati clutch only<br />above 4,500 kilograms gross vehicle weight</td>
+                          </tr>
+                          <tr>
+                          <td style="border: 1px solid #000000; text-align: center;">1, 4, 6</td>
+                          <td style="border: 1px solid #000000; text-align: center;">&nbsp;</td>
+                          <td style="border: 1px solid #000000; text-align: center;">1, 4, 6</td>
+                          <td style="border: 1px solid #000000;">&nbsp;</td>
+                          <td style="border: 1px solid #000000; text-align: center;">6</td>
+                          <td style="border: 1px solid #000000;">Articulated motor vehicle 1,600 kilograms<br />and below gross vehicle weight</td>
+                          </tr>
+                          <tr>
+                          <td rowspan="2" style="border: 1px solid #000000; text-align: center;">Change Classification with<br />ARC (NPDL - PDL)</td>
+                          <td rowspan="2" style="border: 1px solid #000000; text-align: left;">Valid NPDL issued at<br />least 1 year prior to<br />application</td>
+                          <td style="border: 1px solid #000000; text-align: center;">&nbsp;</td>
+                          <td style="border: 1px solid #000000; text-align: center;">3, 7, 8</td>
+                          <td style="border: 1px solid #000000; text-align: center;">1, 2, 3, 6, 7, 8</td>
+                          <td rowspan="2" style="border: 1px solid #000000;">Required longer period prior to&nbsp;<br />application to ensure competence</td>
+                          <td style="border: 1px solid #000000; text-align: center;">7</td>
+                          <td style="border: 1px solid #000000;">Articulated motor vehicle 1,601 up to 4,500<br />kilograms gross vehicle weight and below</td>
+                          </tr>
+                          <tr>
+                          <td style="border: 1px solid #000000; text-align: center;">&nbsp;</td>
+                          <td style="border: 1px solid #000000; text-align: center;">5, 7, 8</td>
+                          <td style="border: 1px solid #000000; text-align: center;">1, 4, 5, 6, 7, 8</td>
+                          <td style="border: 1px solid #000000; text-align: center;">&nbsp;8&nbsp;</td>
+                          <td style="border: 1px solid #000000;">Articulated motor vehicle 4,501 kilograms<br />and above gross vehicle weight</td>
+                          </tr>
+                          </tbody>
+                          </table>
+                        </article>
+                    </section>
+
+                    <section class="main-section" id="LSFC">
+                        <header>LICENSE SCHEDULE OF FEES AND CHARGES</header>
+                        <article>
+                          <ul>
+                            <li><strong>Conversion of Foreign License</strong></li>
+                          </ul>
+                          <table style="width: 563px; height: 148px;">
+                            <tbody>
+                              <tr>
+                                <td style="border: 1px solid #000000;">&nbsp;</td>
+                                <td style="border: 1px solid #000000; text-align: center;"><strong>NEW LICENSE</strong></td>
+                                <td style="border: 1px solid #000000; text-align: center;"><strong>CONVERSION OF FOREIGN LICENSE</strong></td>
+                              </tr>
+                              <tr>
+                                <td style="border: 1px solid #000000;">License Fee</td>
+                                <td style="border: 1px solid #000000; text-align: center;">P 585.00</td>
+                                <td style="border: 1px solid #000000; text-align: center;">P 585.00</td>
+                              </tr>
+                            <tr>
+                              <td style="border: 1px solid #000000;">Application Fee</td>
+                              <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                              <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                            </tr>
+                            <tr>
+                              <td style="border: 1px solid #000000;">Conversion Fee</td>
+                              <td style="border: 1px solid #000000; text-align: center;">-</td>
+                              <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                            </tr>
+                            <tr>
+                              <td style="border: 1px solid #000000;"><strong>TOTAL</strong></td>
+                              <td style="border: 1px solid #000000; text-align: center;">P 685.00</td>
+                              <td style="border: 1px solid #000000; text-align: center;">P 785.00</td>
+                            </tr>
+                            </tbody>
+                            </table>
+                            <p>&nbsp;</p>
+
+                            <p><strong>Renewal of Driver's License [Non-Professional Driver's License (NPDL) / Professional Driver's License (PDL) and Conductor's License]</strong></p>
+                            <table style="width: 999px; height: 182px;">
+                              <tbody>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">&nbsp;</td>
+                                  <td style="border: 1px solid #000000; text-align: center;"><strong>RENEWAL</strong></td>
+                                  <td style="border: 1px solid #000000; text-align: center;"><strong>ONE (1) DAY TO ONE(1) YEAR EXPIRED</strong></td>
+                                  <td style="border: 1px solid #000000; text-align: center;"><strong>MORE THAN ONE (1) YEAR TO TWO (2) YEARS EXPIRED</strong></td>
+                                  <td style="border: 1px solid #000000; text-align: center;"><strong>MORE THAN TWO (2) YEARS</strong></td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">License Fee</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 585.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 585.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 585.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 585.00</td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">Penalty</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">-</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 75.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 150.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 225.00</td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">Application Fee</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">-</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">-</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">-</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;"><strong>TOTAL</strong></td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 585.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 660.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 735.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 910.00</td>
+                                </tr>
+                              </tbody>
+                              </table>
+                            <p>&nbsp;</p>
+
+                            <p><strong>Renewal of Driver's License (DL) of Overseas Filipino Workers (OFW)</strong></p>
+                            <table style="width: 997px; height: 202px;">
+                              <tbody>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">&nbsp;</td>
+                                  <td style="border: 1px solid #000000; text-align: center;"><strong>RENEWAL</strong></td>
+                                  <td style="border: 1px solid #000000; text-align: center;"><strong>ONE (1) DAY TO ONE (1) YEAR EXPIRED</strong></td>
+                                  <td style="border: 1px solid #000000; text-align: center;"><strong>MORE THAN ONE (1) YEAR TO TWO (2) YEARS EXPIRED</strong></td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">License Fee</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 585.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 585.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 585.00</td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">Penalty</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">-</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 75.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 150.00</td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">Conversion Fee</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">-</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">-</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">-</td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;"><strong>TOTAL</strong></td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 585.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 660.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 735.00</td>
+                                </tr>
+                              </tbody>
+                              </table>
+                            <p>&nbsp;</p>
+
+                            <p><strong>CHANGE CLASSIFICATION:</strong></p>
+                            <ul>
+                            <li><strong>Valid Non-Professional Driver's License (NPDL) to Professional Driver's License (PDL)</strong></li>
+                            <li><strong>Valid Professional Driver's License (PDL) to Non-Professional Driver's License (NPDL)</strong></li>
+                            <li><strong>Expired NPDL to PDL / PDL to NPDL&nbsp;</strong></li>
+                            </ul>
+                            <table style="width: 994px; height: 202px;">
+                              <tbody>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">&nbsp;</td>
+                                  <td style="border: 1px solid #000000; text-align: center;"><strong>VALID NPDL TO PDL</strong></td>
+                                  <td style="border: 1px solid #000000; text-align: center;"><strong>VALID PDL TO NPDL</strong></td>
+                                  <td style="border: 1px solid #000000; text-align: center;"><strong>FOR EXPIRED NPDL TO PDL / PDL TO NPDL</strong></td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">Application Fee</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">Replacement Fee</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 225.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 225.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">-</td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">Renewal Fee</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">-</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">-</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 585.00</td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">Change Classification</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;"><strong>TOTAL</strong></td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 425.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 425.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 785.00 + penalty</td>
+                                </tr>
+                              </tbody>
+                              </table>
+                              <p>Note:</p>
+                              <ol style="list-style-type: upper-alpha;">
+                                <li>if due for renewal, license fee = P 585.00</li>
+                                <li>penalty<ol style="list-style-type: lower-alpha;">
+                                <li>if expired 1 day to 1 year = P 75.00</li>
+                                <li>1 year and 1 day to 2 years = P 150.00</li>
+                                <li>2 years and 1 day to 10 years = P 225.00</li>
+                                </ol></li>
+                                <li>Additional Restriction Code (ARC) = P 100.00</li>
+                              </ol>
+                            <p>&nbsp;</p>
+
+                            <p><strong>&nbsp;Additional Restriction Codes</strong></p>
+                            <table style="width: 586px; height: 197px;">
+                              <tbody>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">&nbsp;</td>
+                                  <td style="border: 1px solid #000000; text-align: center;"><strong>VALID NPDL / PDL</strong></td>
+                                  <td style="border: 1px solid #000000; text-align: center;"><strong>DUE FOR RENEWAL</strong></td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">Replacement Fee</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 225.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">-</td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">Renewal Fee</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">-</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 585.00</td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">Additional Restriction Fee</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">Application Fee</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;"><strong>TOTAL</strong></td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 425.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 785.00</td>
+                                </tr>
+                                </tbody>
+                                </table>
+                            <p>&nbsp;</p>
+
+                            <p><strong>Duplicate Valid Driver's License or/with Revision of Records and Student Permit</strong></p>
+                            <table style="width: 828px; height: 211px;">
+                              <tbody>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">&nbsp;</td>
+                                  <td style="border: 1px solid #000000; text-align: center;"><strong>DUPLICATE DL</strong></td>
+                                  <td style="border: 1px solid #000000; text-align: center;"><strong>WITH REVISION OF RECORDS</strong></td>
+                                  <td style="border: 1px solid #000000; text-align: center;"><strong>STUDENT PERMIT</strong></td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">Replacement Fee</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 225.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 225.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">-</td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">Certification Fee</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">Clearance Fee</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 30.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 30.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">-</td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">Duplicate Fee</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 50.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 50.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 50.00</td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">With Revision of Records</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">-</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">-</td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;"><strong>TOTAL</strong></td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 405.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 505.00</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 150.00</td>
+                                </tr>
+                            </tbody>
+                            </table>
+                            <p>&nbsp;</p>
+
+                            <p><strong>Revision of Records (valid Driver's License)</strong></p>
+                              <table style="width: 387px; height: 137px;">
+                                <tbody>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">&nbsp;</td>
+                                  <td style="border: 1px solid #000000; text-align: center;"><strong>REVISION OF RECORDS</strong></td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">Replacement Fee</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 225.00</td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;">Revision Fee</td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                                </tr>
+                                <tr>
+                                  <td style="border: 1px solid #000000;"><strong>TOTAL&nbsp;</strong></td>
+                                  <td style="border: 1px solid #000000; text-align: center;">P 325.00</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          <p>&nbsp;</p>
+
+                          <p><strong>Conversion of Foreign Driver's License</strong></p>
+                          <table style="width: 928px; height: 218px;">
+                            <tbody>
+                              <tr>
+                                <td rowspan="2" style="border: 1px solid #000000;">&nbsp;&nbsp;</td>
+                                <td rowspan="2" style="border: 1px solid #000000; text-align: center;"><strong>VALID FOREIGN DL TO NPDL&nbsp;</strong></td>
+                                <td colspan="2" style="border: 1px solid #000000; text-align: center;"><strong>CONTINUITY OF PHILIPPINE DRIVER'S LICENSE&nbsp;</strong></td>
+                              </tr>
+                              <tr>
+                                <td style="border: 1px solid #000000; text-align: center;"><strong>WITHOUT REVISION OF RECORDS</strong></td>
+                                <td style="border: 1px solid #000000; text-align: center;"><strong>WITH REVISION OF RECORDS</strong></td>
+                              </tr>
+                              <tr>
+                                <td style="border: 1px solid #000000;">License Fee</td>
+                                <td style="border: 1px solid #000000; text-align: center;">P 585.00</td>
+                                <td style="border: 1px solid #000000; text-align: center;">P 585.00</td>
+                                <td style="border: 1px solid #000000; text-align: center;">P 585.00</td>
+                              </tr>
+                              <tr>
+                                <td style="border: 1px solid #000000;">Application Fee</td>
+                                <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                                <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                                <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                              </tr>
+                              <tr>
+                                <td style="border: 1px solid #000000;">Conversion Fee</td>
+                                <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                                <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                                <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                              </tr>
+                                <tr>
+                                <td style="border: 1px solid #000000;">Revision of Records Fee</td>
+                                <td style="border: 1px solid #000000; text-align: center;">-</td>
+                                <td style="border: 1px solid #000000; text-align: center;">-</td>
+                                <td style="border: 1px solid #000000; text-align: center;">P 100.00</td>
+                              </tr>
+                              <tr>
+                                <td style="border: 1px solid #000000;"><strong>TOTAL</strong></td>
+                                <td style="border: 1px solid #000000; text-align: center;">P 758.00</td>
+                                <td style="border: 1px solid #000000; text-align: center;">P 758.00</td>
+                                <td style="border: 1px solid #000000; text-align: center;">P 858.00</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </article>
+                    </section>
+                    <section class="main-section" id="Reference">
+                        <header>Reference</header>
+                        <article>
+                            <li>All the documentation in this page is taken from <a
+                                    href="https://lto.gov.ph/license-and-permit.html"
+                                    target="_blank">LTO</a>
+                        </article>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="index.html">Home</a>
+	    <a href="tributepage.html">Tribute Page</a>
+	    <a href="surveyform.html">Survey Form</a>
+	    <a href="productlandingpage.html">Product Landing Page</a>
+	    <a href="technicaldocumentationpage.html">Technical Documentation Page</a>
+    </div>
+
+    <script>
+        function openNav() {
+          document.getElementById("mySidebar").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+        function closeNav() {
+          document.getElementById("mySidebar").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+    </script>
+
+
+</body>
+</html>
